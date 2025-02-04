@@ -17,7 +17,22 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+	  window.addEventListener("onEmbeddedMessagingReady", e => {
+        //log event
+        console.log("onEmbeddedMessagingReady event triggered");
+        
+        //set visible prechat field
+        embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+            // List the pre-chat field names with the value and whether
+            // it's editable in the pre-chat form.
+            "sf_org_id": {
+              "value": '',
+              "isEditableByEndUser": true
+            }
+        });
+});
 </script>
+	
 <script type='text/javascript' src='https://orgfarm-dc5b4f1bb4-dev-ed.develop.my.site.com/ESWAgentforceworkshop1738665472972/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   
 Test Suyra</body>
